@@ -555,7 +555,7 @@ main {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #9356dc;
+  background-color: #9356DC;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -610,6 +610,21 @@ main {
   -webkit-box-shadow: 4px 4px 8px #e5e5e5;
           box-shadow: 4px 4px 8px #e5e5e5;
   border-radius: 14px;
+  -webkit-transition: border-radius 900ms;
+  transition: border-radius 900ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.resto__card:hover {
+  -webkit-box-shadow: 6px 6px 10px #9356DC;
+          box-shadow: 6px 6px 10px #9356DC;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
 }
 
 .resto__card .resto__Carte__img {
@@ -631,8 +646,8 @@ main {
   width: 81px;
   height: 29px;
   padding: 8px 0 0 15px;
-  font-size: 13px;
-  background-color: #99e2d0;
+  font-size: 16px;
+  background-color: #99E2D0;
   color: #008766;
   display: block;
   position: absolute;
@@ -654,8 +669,71 @@ main {
   padding: 0 24px 0 14px;
 }
 
-.resto__info i.far {
-  font-size: 1.4rem;
+@-webkit-keyframes vide {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes vide {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.Resto__heart {
+  font-size: 35px;
+  position: absolute;
+  right: 65px;
+  bottom: 50px;
+  color: #4b4b4b;
+}
+
+.Resto__heart--ampty {
+  position: absolute;
+  z-index: 2;
+}
+
+.Resto__heart--ampty:hover {
+  -webkit-animation: vide 1s forwards linear;
+          animation: vide 1s forwards linear;
+  cursor: pointer;
+}
+
+.Resto__heart--ampty:hover + i {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 1s linear;
+  transition: -webkit-transform 1s linear;
+  transition: transform 1s linear;
+  transition: transform 1s linear, -webkit-transform 1s linear;
+}
+
+.Resto__heart--full {
+  position: absolute;
+  opacity: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to top, #FF79DA, #9356DC);
+  background-clip: border-box;
+  background-clip: text;
+  color: transparent;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 /* footer */
@@ -725,6 +803,31 @@ footer ul li .colorlink:hover {
 }
 
 /* Autres Pages */
+@-webkit-keyframes apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15%);
+            transform: translateY(15%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(15%);
+            transform: translateY(15%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .marge__ArrowLeft {
   position: absolute;
   top: 26px;
@@ -808,7 +911,7 @@ footer ul li .colorlink:hover {
   font-weight: 100;
   margin-top: 36px;
   margin-left: 7px;
-  border-bottom: 3px solid #99e2d0;
+  border-bottom: 3px solid #99E2D0;
   width: 40px;
 }
 
@@ -843,6 +946,8 @@ footer ul li .colorlink:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-animation: apparition 2s backwards;
+          animation: apparition 2s backwards;
 }
 
 .cartePlat_side {
@@ -876,7 +981,8 @@ footer ul li .colorlink:hover {
 .cartePlat_side__valid {
   opacity: 0;
   width: 0;
-  background-color: #99e2d0;
+  background-color: #99E2D0;
+  color: #fff;
   border-radius: 0 14px 14px 0;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
@@ -892,19 +998,37 @@ footer ul li .colorlink:hover {
 }
 
 .cartePlat_side__valid:hover {
-  width: 15.733vw;
+  width: 20.733vw;
   max-width: 59px;
   opacity: 1;
-  -webkit-animation: 0.3s reveal;
-          animation: 0.3s reveal;
+  -webkit-animation: 0.10s reveal;
+          animation: 0.10s reveal;
 }
 
-.cartePlat_side__valid i {
-  color: #fff;
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.fa-check-circle:hover {
   font-size: 22px;
-}
-
-.cartePlat_side__valid i:hover {
   -webkit-animation: rotate 0.5s ease-in-out forwards;
           animation: rotate 0.5s ease-in-out forwards;
 }
@@ -926,8 +1050,8 @@ footer ul li .colorlink:hover {
   width: 186px;
   height: 50px;
   border-radius: 25px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(#ff79da, #9356dc);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
   -webkit-box-shadow: 1px 1px 8px grey;
           box-shadow: 1px 1px 8px grey;
   color: white;

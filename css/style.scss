@@ -505,7 +505,7 @@ main{
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background-color: #9356dc;
+            background-color: $Primaire;
             color: white;
             display: flex;
             justify-content: center;
@@ -543,6 +543,14 @@ main{
     background-color: white;
     box-shadow: 4px 4px 8px #e5e5e5;
     border-radius: 14px;
+    transition: border-radius 900ms;
+    transform: scale(1);
+    &:hover{
+        box-shadow: 6px 6px 10px $Primaire;
+        transform: scale(1.1);
+        transition: transform 200ms;
+        
+    }
     .resto__Carte__img{
         display: block;
         position: relative;
@@ -558,8 +566,8 @@ main{
             width: 81px;
             height: 29px;
             padding: 8px 0 0 15px;
-            font-size: 13px;
-            background-color: #99e2d0;
+            font-size: 16px;
+            background-color: $Tertiaire;
             color: #008766;
             display: block;
             position: absolute;
@@ -574,11 +582,53 @@ main{
     align-items: center;
     height: 77px;
     padding: 0 24px 0 14px;
-    i.far{
-        font-size: 1.4rem;
-
+    
+}
+@keyframes vide{
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
+.Resto__heart{
+    font-size: 35px;
+    position: absolute;
+    right: 65px;
+    bottom: 50px;
+    color: #4b4b4b;
+}
+.Resto__heart--ampty{
+    position: absolute;
+    z-index: 2;
+}
+.Resto__heart--ampty:hover{
+    animation: vide 1s forwards linear;
+    cursor: pointer;
+}
+.Resto__heart--ampty:hover + i {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 1s linear;
+         
+}
+.Resto__heart--full{
+    position: absolute;
+    opacity: 0;
+    background: linear-gradient(to top, #FF79DA, #9356DC);
+    background-clip: border-box;
+    background-clip: text;
+    color: transparent;
+    transform-origin: bottom;
+    transform: scale(0);
+    
+}
+
+
 /* footer */
 footer{
     display: flex;
@@ -631,7 +681,16 @@ footer{
 }
 
 /* Autres Pages */
-
+@keyframes apparition{
+    0% {
+        opacity: 0;
+        transform: translateY(15%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .marge__ArrowLeft{
     position: absolute;
     top: 26px;
@@ -688,7 +747,7 @@ footer{
         font-weight: 100;
         margin-top: 36px;
         margin-left: 7px;
-        border-bottom: 3px solid #99e2d0;
+        border-bottom: 3px solid $Tertiaire;
         width: 40px;
 
     }    
@@ -711,6 +770,8 @@ footer{
     box-shadow: 4px 4px 8px #e5e5e5;
     display: flex;
     flex-direction: row;
+    animation: apparition 2s backwards;
+    
 }
 .cartePlat_side{
     padding: 15px 0 0 11px;
@@ -743,26 +804,34 @@ footer{
 .cartePlat_side__valid{
     opacity: 0;
     width: 0;
-    background-color: #99e2d0;
+    background-color: $Tertiaire;
+    color: #fff;
     border-radius: 0 14px 14px 0;
     transition: 0.1s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
     &:hover{
-        width: 15.733vw;
+        width: 20.733vw;
         max-width: 59px;
         opacity: 1;
-        animation: 0.3s reveal;
+        animation: 0.10s reveal;
+        
+       
     }
-    i{
-        color: #fff;
-        font-size: 22px;
-        &:hover{
-            animation: rotate 0.5s ease-in-out forwards;
-
-        }
+    
+}
+@keyframes rotate{
+    0% {
+        transform: rotate(0deg);
     }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+.fa-check-circle:hover{
+    font-size: 22px;
+    animation: rotate 0.5s ease-in-out forwards;
 }
 .commande__size{
     height: 154px;
@@ -773,7 +842,7 @@ footer{
         width: 186px;
         height: 50px;
         border-radius: 25px;
-        background: linear-gradient(#ff79da, #9356dc);
+        background: linear-gradient($Secondaire, $Primaire);
         box-shadow: 1px 1px 8px grey;
         color: white;
         border: 0;
