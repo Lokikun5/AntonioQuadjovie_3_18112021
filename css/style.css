@@ -973,7 +973,7 @@ footer ul li .colorlink:hover {
 }
 
 .cartePlat_side__droite {
-  width: 12.8vw;
+  width: 8vw;
   max-width: 48px;
   padding: 42px 22px 0 0;
 }
@@ -1012,7 +1012,7 @@ footer ul li .colorlink:hover {
 }
 
 .catrePlat:hover .cartePlat_side__valid {
-  width: 15.733vw;
+  width: 20.733vw;
   max-width: 59px;
   opacity: 1;
   -webkit-animation: 0.3s reveal;
