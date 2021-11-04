@@ -440,7 +440,165 @@ main{
     max-width: 1440px;
     margin: auto;
 }
+/* loader */
+.loader{
+    margin-left: 40px;
+    position: fixed;
+    z-index: 10;
+    background: white;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    opacity: 0.97;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: loading 4s forwards;
+    p{
+        font-family: "Shrikhand", sans-serif;
+        font-size: 3em;
+        color: $Primaire;
+        animation: haut 1s, colorP 3s 1s both; 
+    }
+    i{
+        font-size: 3em;
+    }
+    .burger{
+        animation: gauche 1s, colorburger 3s 1s both;
+        color: $Secondaire;
+    }
+    .utensils--Move{
+        animation: droite 1s, colorUtensils 3s 1s both;
+        color: $Tertiaire;
+    }
+    .pizza{
+        animation: bas 1s, colorUtensils 3s 1s both, ease-in-out forwards;
+        transform-origin: center;
+        padding-left: 100px;
+    }
+    .cheese{
+        color: $Primaire;
+        animation: haut 1s, colorP 3s 1s both;
+        padding-left: 100px;
+    }
+}
 
+@keyframes gauche{
+    0% {
+        transform: translateX(-1000%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes droite{
+    0% {
+        transform: translateX(1000%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes haut{
+    0% {
+        transform: translateY(-1000%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes bas{
+    0% {
+        transform: translateY(1000%);
+    }
+    40% {
+        transform: translateY(0);
+    }
+    50%{
+        
+        transform: rotate(0deg);
+    }
+    60% {
+        
+        transform: rotate(180deg);
+    }
+    
+    100% {
+        
+        transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes colorP{
+    0% {
+        color: $Primaire;
+    }
+    20% {
+        color: $Secondaire;
+    }
+    40% {
+        color: $Tertiaire;
+    }
+    60% {
+        color: $Primaire;
+    }
+    80% {
+        color: $Secondaire;
+    }
+    100% {
+        color: $Tertiaire;
+    }
+}
+@keyframes colorburger{
+    0% {
+        color: $Secondaire;
+    }
+    20% {
+        color: $Primaire;
+    }
+    40% {
+        color: $Secondaire;
+    }
+    60% {
+        color: $Primaire;
+    }
+    80% {
+        color: $Tertiaire;
+    }
+    100% {
+        color: $Secondaire;
+    }
+}
+@keyframes colorUtensils{
+    0% {
+        color: $Tertiaire;
+    }
+    20% {
+        color: $Secondaire;
+    }
+    40% {
+        color: $Tertiaire;
+    }
+    60% {
+        color: $Primaire;
+    }
+    80% {
+        color: $Tertiaire;
+    }
+    100% {
+        color: $Secondaire;
+    }
+}
+@keyframes loading{
+    0% {
+        visibility: visible;
+    }
+    100% {
+        visibility: hidden;
+    }
+}
 /* localisation */
 .MargeBloc__Loc{
     width: 100%;
@@ -454,7 +612,7 @@ main{
 /* presentation */
 .presentation{
     background-color: #F6F6F6;
-    height: 350px;
+    height: 260px;
     text-align: center;
 }
 .btn-Explorer{
@@ -678,6 +836,12 @@ footer{
     .resto__card{
         width: 85vw;
     }
+    .loader{
+        margin-left: -10px;
+        i{
+            font-size: 2em;
+        }
+    }
 }
 
 /* Autres Pages */
@@ -861,15 +1025,6 @@ footer{
             filter: brightness(115%);
             box-shadow: 2px 2px 12px grey;
             transition: 0.3s ease-in-out;
-        }
-    }
-}
-
-@media screen and (max-width: 768px){
-    /* Autres Pages mobile */
-    .Resto__fond__size{
-        .titre{
-            max-width: 300px; 
         }
     }
 }
