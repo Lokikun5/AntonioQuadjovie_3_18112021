@@ -696,7 +696,7 @@ main{
     gap: 18px;
 }
 .resto__card{
-    width: 23vw;
+    width: 100%;
     max-width: 335px;
     height: 251px;
     background-color: white;
@@ -887,8 +887,8 @@ footer{
     .titre{
         display: flex;
         justify-content: space-between;
-        padding: 0 38px 0px 19px;
-        width: 93.066vw;
+        padding: 0 20px 0px 15px;
+        width: 370px;
         max-width: 1067px;
         h1{
             font-size: 1.6rem;
@@ -908,7 +908,7 @@ footer{
 
 }
 .plat__titre{
-    width: 93.066vw;
+    width: 90%;
     max-width: 1067px;
     h2{
         text-transform: uppercase;
@@ -927,14 +927,14 @@ footer{
     flex-wrap: wrap;
     margin-top: 15px;
     gap: 10px;
-    width: 93.066vw;
+    width: 90%;
     max-width: 1067px;
 }
 .catrePlat{
     background-color: white;
-    width: 93.066vw;
+    width: 100%;
     max-width: 349px;
-    height: 68px;
+    height: 70px;
     border-radius: 14px;
     box-shadow: 4px 4px 8px #e5e5e5;
     display: flex;
@@ -944,7 +944,7 @@ footer{
 }
 .cartePlat_side{
     padding: 15px 0 0 11px;
-    width: 80.266vw;
+    width: 287.367px;
     max-width: 301px;
     overflow: hidden;
     h3{
@@ -961,7 +961,7 @@ footer{
 
     }
     p{
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 300;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -969,7 +969,7 @@ footer{
     }
 }
 .cartePlat_side__droite{
-    width: 8vw;
+    width: 48px;
     max-width: 48px;
     padding: 42px 22px 0 0;
 
@@ -978,36 +978,37 @@ footer{
 
 .cartePlat_side__valid{
     opacity: 0;
-  width: 0;
-  background-color: $Tertiaire;
-  border-radius: 0 14px 14px 0;
-  transition: 0.1s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 0;
+    background-color: $Tertiaire;
+    border-radius: 0 14px 14px 0;
+    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cartePlat_side__valid .fa-check-circle {
     color: white;
   }
 .catrePlat:hover .cartePlat_side__valid{
-    width: 60.266vw;
+    width: 100px;
     max-width: 226px;
 }
 .catrePlat:hover .cartePlat_side__droite{
-    width: 17.066vw;
-    max-width: 64px;
-    padding: 41px 22px 23px 16px;
+    width: 60px;
+    
+    padding: 41px 0px 23px 16px;
 }
 .catrePlat:hover .cartePlat_side__valid{
-    width: 20.733vw;
+    width: 100px;
     max-width: 59px;
     opacity: 1;
     animation: 0.3s reveal;
 }
-.catrePlat:hover .fa-check-circle{
+.catrePlat:hover .fa-check-circle {
     font-size: 22px;
     animation: rotate 0.5s ease-in-out forwards;
 }
+
 @keyframes rotate{
     0% {
         transform: rotate(0deg);
