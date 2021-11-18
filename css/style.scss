@@ -442,19 +442,20 @@ main{
 }
 /* loader */
 .loader{
-    margin-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
     position: fixed;
     z-index: 10;
     background: white;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1440px;
     height: 100%;
     opacity: 0.97;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
-    animation: loading 4s forwards;
+    animation: loading 3s forwards;
     p{
         font-family: "Shrikhand", sans-serif;
         font-size: 3em;
@@ -612,7 +613,7 @@ main{
 /* presentation */
 .presentation{
     background-color: #F6F6F6;
-    height: 260px;
+    padding-bottom: 60px;
     text-align: center;
 }
 .btn-Explorer{
@@ -638,7 +639,7 @@ main{
 .Fonctionnement{
     width: 100%;
     padding: 52px 0 68px 0;
-    border: 1px solid #f6f6f6;
+    
 }
 .Fonctionnement__carte{
     display: flex;
@@ -777,7 +778,7 @@ main{
 .Resto__heart--full{
     position: absolute;
     opacity: 0;
-    background: linear-gradient(to top, #FF79DA, #9356DC);
+    background: linear-gradient(to top, $Secondaire, $Primaire);
     background-clip: border-box;
     background-clip: text;
     color: transparent;
@@ -799,6 +800,7 @@ footer{
     color: white;
     max-width: 1440px;
     margin: auto;
+    box-sizing: border-box;
     ul{
         list-style: none;
         margin: 0;
@@ -824,6 +826,9 @@ footer{
 /* telephone */
 
 @media screen and (max-width: 768px){
+    h1{
+        font-size: 30px;
+    }
     /* Fonctionnement */
     .Fonctionnement__carte{
     flex-direction: column;
@@ -942,8 +947,6 @@ footer{
     width: 80.266vw;
     max-width: 301px;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     h3{
         
         
@@ -952,11 +955,17 @@ footer{
         margin: 0;
         padding: 0;
         color: black;
-        p{
-            font-size: 14px;
-            font-weight: 100;
-        }
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
 
+    }
+    p{
+        font-size: 14px;
+        font-weight: 300;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
 .cartePlat_side__droite{

@@ -460,12 +460,13 @@ main {
 
 /* loader */
 .loader {
-  margin-left: 40px;
+  margin-left: auto;
+  margin-right: auto;
   position: fixed;
   z-index: 10;
   background: white;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1440px;
   height: 100%;
   opacity: 0.97;
   display: -webkit-box;
@@ -480,8 +481,8 @@ main {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-animation: loading 4s forwards;
-          animation: loading 4s forwards;
+  -webkit-animation: loading 3s forwards;
+          animation: loading 3s forwards;
 }
 
 .loader p {
@@ -794,7 +795,7 @@ main {
 /* presentation */
 .presentation {
   background-color: #F6F6F6;
-  height: 260px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
@@ -835,7 +836,6 @@ main {
 .Fonctionnement {
   width: 100%;
   padding: 52px 0 68px 0;
-  border: 1px solid #f6f6f6;
 }
 
 .Fonctionnement__carte {
@@ -1076,6 +1076,8 @@ footer {
   color: white;
   max-width: 1440px;
   margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 footer ul {
@@ -1104,6 +1106,9 @@ footer ul li .colorlink:hover {
 
 /* telephone */
 @media screen and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
   /* Fonctionnement */
   .Fonctionnement__carte {
     -webkit-box-orient: vertical;
@@ -1282,8 +1287,6 @@ footer ul li .colorlink:hover {
   width: 80.266vw;
   max-width: 301px;
   overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .cartePlat_side h3 {
@@ -1292,11 +1295,17 @@ footer ul li .colorlink:hover {
   margin: 0;
   padding: 0;
   color: black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.cartePlat_side h3 p {
+.cartePlat_side p {
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 300;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .cartePlat_side__droite {
