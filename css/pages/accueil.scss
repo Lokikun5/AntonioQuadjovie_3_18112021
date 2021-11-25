@@ -151,6 +151,7 @@ main{
     right: 65px;
     bottom: 50px;
     color: #4b4b4b;
+    cursor: pointer;
 }
 .Resto__heart--ampty{
     position: absolute;
@@ -159,23 +160,24 @@ main{
 .Resto__heart--ampty:hover{
     animation: vide 1s forwards linear;
     cursor: pointer;
+    .Resto__heart--ampty:active{
+        animation: vide 1s forwards linear;
+        cursor: pointer;
+    }
 }
 .Resto__heart--ampty:hover + i {
     opacity: 1;
     transform: scale(1);
     transition: transform 1s linear;
-         
+    .Resto__heart--ampty:active + i {
+        opacity: 1;
+        transform: scale(1);
+        transition: transform 1s linear;
+             
+    }     
 }
-.Resto__heart--ampty:active{
-    animation: vide 1s forwards linear;
-    cursor: pointer;
-}
-.Resto__heart--ampty:active + i {
-    opacity: 1;
-    transform: scale(1);
-    transition: transform 1s linear;
-         
-}
+
+
 .Resto__heart--full{
     position: absolute;
     opacity: 0;

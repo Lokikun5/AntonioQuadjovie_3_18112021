@@ -14,3 +14,24 @@
         transition: 0.3s ease-in-out;
     }
 }
+
+.commande__size{
+    height: 154px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .commande__color{
+        width: 186px;
+        height: 50px;
+        border-radius: 25px;
+        background: linear-gradient($Secondaire, $Primaire);
+        box-shadow: 1px 1px 8px grey;
+        color: white;
+        border: 0;
+        &:hover{
+            filter: brightness(115%);
+            box-shadow: 2px 2px 12px grey;
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
