@@ -1,0 +1,189 @@
+/* Autres Pages */
+@keyframes apparition{
+    0% {
+        opacity: 0;
+        transform: translateY(15%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.marge__ArrowLeft{
+    position: absolute;
+    top: 26px;
+    left: 23px;
+    display: inline-block;
+    transform: scale(1.1, 1.1);
+    color: black;
+}
+.background__img{
+    width: 100%;
+    max-width: 100%;
+    height: 258px;
+    object-fit: cover;
+}
+.Resto__fond__size{
+    transform: translateY(-38px);
+    margin-bottom: -38px;
+    width: 100%;
+    background-color: #f6f6f6;
+    border-radius: 39px 39px 0 0;
+    padding: 41px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .titre{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px 0px 15px;
+        width: 370px;
+        max-width: 1067px;
+        h1{
+            font-size: 1.6rem;
+            font-family: "Shrikhand", cursive;
+            font-weight: 100;
+        }  
+    }
+}
+
+.titre__size--icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+        font-size: 1.4rem; 
+    }
+
+}
+.plat__titre{
+    width: 90%;
+    max-width: 1067px;
+    h2{
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 100;
+        margin-top: 36px;
+        margin-left: 7px;
+        border-bottom: 3px solid $Tertiaire;
+        width: 40px;
+
+    }    
+}
+.groupPlat1__size{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    gap: 10px;
+    width: 90%;
+    max-width: 1067px;
+}
+.catrePlat{
+    background-color: white;
+    width: 100%;
+    max-width: 349px;
+    height: 70px;
+    border-radius: 14px;
+    box-shadow: 4px 4px 8px #e5e5e5;
+    display: flex;
+    flex-direction: row;
+    animation: apparition 2s backwards;
+    
+}
+.cartePlat_side{
+    padding: 15px 0 0 11px;
+    width: 287.367px;
+    max-width: 301px;
+    overflow: hidden;
+    h3{
+        
+        
+        font-weight: bold;
+        font-size: 100%;
+        margin: 0;
+        padding: 0;
+        color: black;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+    }
+    p{
+        font-size: 15px;
+        font-weight: 300;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+.cartePlat_side__droite{
+    width: 48px;
+    max-width: 48px;
+    padding: 42px 22px 0 0;
+
+}
+
+
+.cartePlat_side__valid{
+    opacity: 0;
+    width: 0;
+    background-color: $Tertiaire;
+    border-radius: 0 14px 14px 0;
+    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartePlat_side__valid .fa-check-circle {
+    color: white;
+  }
+.catrePlat:hover .cartePlat_side__valid{
+    width: 100px;
+    max-width: 226px;
+}
+.catrePlat:hover .cartePlat_side__droite{
+    width: 60px;
+    
+    padding: 41px 0px 23px 16px;
+}
+.catrePlat:hover .cartePlat_side__valid{
+    width: 100px;
+    max-width: 59px;
+    opacity: 1;
+    animation: 0.3s reveal;
+}
+.catrePlat:hover .fa-check-circle {
+    font-size: 22px;
+    animation: rotate 0.5s ease-in-out forwards;
+}
+
+@keyframes rotate{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.commande__size{
+    height: 154px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .commande__color{
+        width: 186px;
+        height: 50px;
+        border-radius: 25px;
+        background: linear-gradient($Secondaire, $Primaire);
+        box-shadow: 1px 1px 8px grey;
+        color: white;
+        border: 0;
+        &:hover{
+            filter: brightness(115%);
+            box-shadow: 2px 2px 12px grey;
+            transition: 0.3s ease-in-out;
+        }
+    }
+}

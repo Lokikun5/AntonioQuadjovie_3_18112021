@@ -1,0 +1,16 @@
+.btn-Explorer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient($Primaire, $Secondaire);
+    border-radius: 40px;
+    box-shadow: 1px 1px 8px grey;
+    width: 250px;
+    height: 50px;
+    cursor: pointer;
+    &:hover{
+        filter: brightness(115%);
+        box-shadow: 2px 2px 12px grey;
+        transition: 0.3s ease-in-out;
+    }
+}
